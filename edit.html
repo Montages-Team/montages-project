@@ -1,0 +1,168 @@
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel ="stylesheet" type="text/css" href="./main.css">
+	<title>Montages</title>
+	</head>
+	<body>
+	<div id="top" class="container">
+		<div class="title_right">
+			<a href="./login.html">Login</a>
+			/
+			<a href="./registar.html">Sign up</a>
+			<a href="#"><img height="36" src="./images/rss.png" class="overwhite"></a>
+			<a href="#"><img height="36" src="./images/twitter.png" class="overwhite"></a>
+			<a href="#"><img height="36" src="./images/facebook.png" class="overwhite"></a>
+			<a href="#"><img height="36" src="./images/mail.png" class="overwhite"></a>
+		</div>
+		<div class="title_left">
+			<h1>
+				<a href="#">Montages<img height="48" src="./images/icon_new_s.png" class="icon">
+				</a>
+			</h1>
+		</div>
+	</div>
+	<hr class="title" />
+	<div class="container2">
+		<div class="profile">
+				<img class="profile" src="./images/my_profile.jpg">
+				<br/>
+				<span class="name">Mitsuhiko Kai</span>
+				<br />
+				Follows: <a href="#">10</a>
+				<br />
+				Followers: <a href="#">12</a>
+				<br />
+				Givers: <a href="#">2</a>
+		</div>
+		<div class="questions">
+		<h1>Questions <img class="icon" height="26" width="26" src="./images/questions.png"></h1>
+		<br />
+		<div class="question">1. Do you like hoge?</div>
+		<div class="question">2. Do you hate fuga?</div>
+		<div class="question">3. Do you want foo?</div>
+		<div class="question">4. Do you have bar?</div>
+		<br /><br /><br />
+		<a href="#"><div class="skip" align="right" >Skip</div></a>
+		</div>
+		<div class="main">
+				<h1>Profile creation form <img class="" height="26" src="./images/edit.png"></h1>
+				<p id="name">1. Name</p>
+				hoge<br /><br />
+				<p id="bio">2. Biography</p>
+				<br /><br />
+				<p id="qes">3. Questions and Answer</p>
+				<br /><br />
+				<p id="see">4. See also</p>
+				<br /><br />
+				<p id="ref">5. Reference</p>
+				<br /><br />
+
+
+<div id="orver">
+ <div id="wrap">
+ <div id="contents">
+ <a id="modal-open" class="button-link">保存する！</a>
+ </div> <!-- contents end -->
+ </div> <!-- wrap end -->
+</div> <!-- orver end -->
+ 
+<!-- ここからモーダルウィンドウ -->
+<div id="modal-content">
+ <div id="modal-content-innar">
+ <!-- モーダルウィンドウのコンテンツ開始 -->
+ <p>保存が完了しました！</p>
+ <br />
+ 			<a href="#"><img height="36" src="./images/twitter.png" class="overwhite">Tweetする</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#"><img height="36" src="./images/facebook.png" class="overwhite">
+			Facebookに投稿する</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#"><img height="36" src="./images/mail.png" class="overwhite">
+			メールを送信する</a>
+			<br /><br />
+ </div>
+ <!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+
+<script>
+$(function(){
+ $("#modal-open").click(function(){
+ //キーボード操作などにより、オーバーレイが多重起動するのを防止する
+ $( this ).blur() ; //ボタンからフォーカスを外す
+ if( $( "#modal-overlay" )[0] ) return false ; //新しくモーダルウィンドウを起動しない (防止策1)
+ //if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;		//現在のモーダルウィンドウを削除して新しく起動する (防止策2)
+ 
+ //オーバーレイを出現させる
+ $( "body" ).append( '<div id="modal-overlay"></div>' ) ;
+ $( "#modal-overlay" ).fadeIn( "slow" ) ;
+ 
+ //コンテンツをセンタリングする
+ centeringModalSyncer() ;
+ 
+ //コンテンツをフェードインする
+ $( "#modal-content" ).fadeIn( "slow" ) ;
+ 
+ //[#modal-overlay]、または[#modal-close]をクリックしたら…
+ $( "#modal-overlay,#modal-close" ).unbind().click( function(){
+ 
+ //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
+ $( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
+ 
+ //[#modal-overlay]を削除する
+ $('#modal-overlay').remove() ;
+ 
+ } ) ;
+ 
+ } ) ;
+ 
+ } ) ;
+ 
+ //リサイズされたら、センタリングをする関数[centeringModalSyncer()]を実行する
+ $( window ).resize( centeringModalSyncer ) ;
+ 
+ //センタリングを実行する関数
+ function centeringModalSyncer() {
+ 
+ //画面(ウィンドウ)の幅、高さを取得
+ var w = $( window ).width() ;
+ var h = $( window ).height() ;
+ 
+ // コンテンツ(#modal-content)の幅、高さを取得
+ // jQueryのバージョンによっては、引数[{margin:true}]を指定した時、不具合を起こします。
+ var cw = $( "#modal-content" ).outerWidth( {margin:true} );
+ var ch = $( "#modal-content" ).outerHeight( {margin:true} );
+ var cw = $( "#modal-content" ).outerWidth();
+ var ch = $( "#modal-content" ).outerHeight();
+ 
+ //センタリングを実行する
+ $( "#modal-content" ).css( {"left": ((w - cw)/2) + "px","top": ((h - ch)/2) + "px"} ) ;
+ 
+ }
+ 
+} ) ;
+</script>
+
+
+		</div>
+		<div class="footer">Powered by Montage.</div>
+		<div class="side">
+				<h1>Index <img height="26" class="icon" src="./images/index.png"></h1>
+				<p>1. <a href="#name">Name</a></p>
+				<p>2. <a href="#bio">Biography</a></p>
+				<p>3. <a href="#qes">Questions and Answer</a></p>
+				<p>4. <a href="#see">See also</a></p>
+				<p>5. <a href="#ref">Reference</a></p>
+
+		</div>
+		<div class="ad">
+				<h1>Ads <img height="26" src="./images/ad.png"></h1>
+				<a href="http://iiojun.xyz/KAI/">hoge hoge typing</a> is awesome!<br />
+				you should try it!<br /><br/>
+		</div>
+	</div><br /><br /><br />
+	<div class="back"><a href="#top">
+	<img height="12" src="./images/plus.png">
+	Edit
+	</a></div>
+	</body>
+</html>
