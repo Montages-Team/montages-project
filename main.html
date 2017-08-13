@@ -1,0 +1,91 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel ="stylesheet" type="text/css" href="./main.css">
+	<link rel="stylesheet" href="./modal.css">
+	<title>Montages</title>
+</head>
+<body>
+	<script type='text/javascript' src='./js/headroom.js'></script>
+	<script type='text/javascript' src='./js/jQuery.headroom.js'></script>
+	<script type='text/javascript' src='./js/modal.js'></script>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<div class="headroom" id="header-fixed">
+		<div id="header-bk">
+			<div id="header">
+				<div class="title_right">
+					<dl>
+						<dt>
+							<input  class="right_top" type="text"　placeholder="hoge" name="name" placeholder="@hoge" /><input class="right_top" type="submit" value="検索" />
+							<a data-open-modal="modal-demo" href="#about"><span class="hoge">ログイン</span></a>&nbsp;&nbsp; &nbsp;&nbsp;<a data-open-modal="modal-demo" href="#newuser"><span class="hoge">新規登録</span></a>
+							<span id="start" class="target"><!-- Hidden anchor to close all modals --></span>
+							<span id="about" class="target"><!-- Hidden anchor to open adjesting modal container--></span>
+							<div class="modal">
+								<div class="content vertical-align-middle">
+									<article>
+										<center>
+											<h1>Montagesにログインしましょう</h1>
+											<h3>メールアドレスとパスワードを入力してください。</h3>
+											<form>
+												<input type="text" name="mail" placeholder="montage@mail.com" />
+												<input type="text"　placeholder="Password" name="pass" placeholder="password" />
+												<div class="montages_login">
+													<img height="26" src="./images/icon_new_s.png" class="overwhite">
+													Montages IDでログイン
+												</div>
+												<div class="twitter_login">
+													<img height="26" src="./images/twitter.png" class="overwhite">
+													Twitter IDでログイン
+												</div>
+											</form>
+										</center>
+									</article>
+									<a class="close-btn" href="#">X</a>
+								</div>
+							</div>
+							<span id="start" class="target"><!-- Hidden anchor to close all modals --></span>
+							<span id="newuser" class="target"><!-- Hidden anchor to open adjesting modal container--></span>
+							<div class="modal">
+								<div class="content vertical-align-middle">
+									<article>
+										<center>
+											<h1>Montagesにアカウントを作成しましょう</h1>
+											<h3>登録は1Stepで簡単です。
+												<br />
+												メールアドレスを入力してください。</h3>
+												<form>
+													<input type="text"　placeholder="hoge" name="mailadd" placeholder="hogehoge@montages.com" />
+													<input type="submit" value="送信" />
+												</form>
+												<br />
+												アカウントをお持ちの方は<b><a href="#about">こちら</a></b>からどうぞ。
+											</center>
+										</article>
+										<a class="close-btn" href="#">X</a>
+									</div>
+								</div>
+							</dt>  
+						</dl>  
+					</div>
+					<div class="title_left">
+						<h1><a href="#">Montages<img height="48" src="./images/icon_new_s_w.png" class="icon"></a></h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="body-bk">
+			<div id="body">・・・</div>
+		</div>
+		</div>
+		<div class="container4">
+			<div class="inner">
+			<h1>プロフィールを検索しましょう。<img height="64" src="./images/icon_new.png" class="icon"></h1>
+			<h3>友達も、好きな人も、プロフィールを自由に作り変えることができます。</h3>
+			<br /><br />
+				<input  class="maintop" type="text"　placeholder="hoge" name="name" placeholder="Twitter ID[@Montage]" /><input class="maintop" type="text"　placeholder="hoge" name="name" placeholder="氏名 [Montage Tarou]" /><input class="maintop" type="submit" value="検索" />
+				</div>
+			</div>
+			<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />
+			<center><small>Powered by Montages</small></center>
+	</body>
+	</html>
